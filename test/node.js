@@ -10,9 +10,7 @@ describe('node-vagalume node module', function () {
   it('VagalumeAPI :: getArtista(Rage Against the Machine)', function (done) {
 
     api.getArtista('Rage Against the Machine').then(function (response) {
-      var body = response.body;
-
-      assert('3ade68b5gef77eda3', body.artist.id);
+      assert('3ade68b5gef77eda3', response.artist.id);
       done();
     }).catch(function (err) {
       throw err;
@@ -23,8 +21,7 @@ describe('node-vagalume node module', function () {
   it('VagalumeAPI :: getByTrecho(q=told ya)', function (done) {
 
     api.getByTrecho('told ya').then(function (response) {
-      var body = response.body;
-      assert(5, body.response.docs.length);
+      assert(5, response.response.docs.length);
       done();
     }).catch(function (err) {
       throw err;
@@ -35,9 +32,7 @@ describe('node-vagalume node module', function () {
   it('VagalumeAPI :: getByTrecho(q=told ya, limit=10)', function (done) {
 
     api.getByTrecho('told ya').then(function (response) {
-      var body = response.body;
-
-      assert(10, body.response.docs.length);
+      assert(10, response.response.docs.length);
       done();
     }).catch(function (err) {
       throw err;
@@ -48,9 +43,7 @@ describe('node-vagalume node module', function () {
   it('VagalumeAPI :: getDiscografia(Rage Against the Machine)', function (done) {
 
     api.getDiscografia('Rage Against the Machine').then(function (response) {
-      var body = response.body;
-
-      assert(10, body.discography.item.length);
+      assert(10, response.discography.item.length);
       done();
     }).catch(function (err) {
       throw err;
@@ -61,9 +54,7 @@ describe('node-vagalume node module', function () {
   it('VagalumeAPI :: getHotspots()', function (done) {
 
     api.getHotspots().then(function (response) {
-      var body = response.body;
-
-      assert(10, body.hotspots);
+      assert(10, response.hotspots);
       done();
     }).catch(function (err) {
       throw err;
@@ -74,9 +65,7 @@ describe('node-vagalume node module', function () {
   it('VagalumeAPI :: getNoticias()', function (done) {
 
     api.getNoticias().then(function (response) {
-      var body = response.body;
-
-      assert(20, body.news.length);
+      assert(20, response.news.length);
       done();
     }).catch(function (err) {
       throw err;

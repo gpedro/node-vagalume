@@ -1,23 +1,40 @@
 'use strict';
 
-var fetch = require('node-fetch');
 var dashify = require('dashify');
 var qs = require('querystring');
-var bluebird = require('bluebird');
+var Promise = require('bluebird');
+var http = require('http');
 
 function Vagalume() {
-  // Promise Fallback
-  fetch.Promise = fetch.Promise || bluebird;
-
-  // Configs
-  this.baseUrl = 'http://www.vagalume.com.br';
-  this.baseApi = 'http://api.vagalume.com.br';
 
   // I'm Java Developer
   var PRIVATE = {};
   var PUBLIC = this;
 
+  // Configs
+  PRIVATE.baseUrl = 'http://www.vagalume.com.br';
+  PRIVATE.baseApi = 'http://api.vagalume.com.br';
+
   // Private Methods
+  PRIVATE.fetch = function(url) {
+    return new Promise(function(resolve, reject) {
+      http.get(url, function(res) {
+        var body = '';
+        res.on('data', function(chunk) {
+          body += chunk;
+        });
+
+        res.setEncoding('utf8');
+
+        res.on('end', function () {
+          return resolve(JSON.parse(body));
+        });
+      }).on('error', function(err) {
+        return reject(err);
+      });
+    });
+  };
+
   PRIVATE.safeString = function (value) {
     return dashify(value.toLowerCase());
   };
@@ -50,17 +67,15 @@ function Vagalume() {
       url += qs.stringify(args);
     }
 
-    return fetch(url).then(function (res) {
-      return res.json();
-    });
+    return PRIVATE.fetch(url);
   };
 
   PRIVATE.apiRequest = function (method, args) {
-    return this.prepareRequest(PUBLIC.baseApi + method, args);
+    return this.prepareRequest(this.baseApi + method, args);
   };
 
   PRIVATE.wwwRequest = function(method, args) {
-    return this.prepareRequest(PUBLIC.baseUrl + method, args);
+    return this.prepareRequest(this.baseUrl + method, args);
   };
 
 
