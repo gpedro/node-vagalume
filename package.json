@@ -35,11 +35,12 @@
     "time-grunt": "^1.1.0"
   },
   "scripts": {
-    "test": "grunt",
-    "browser-test": "tape test/browser/*.js",
-    "browser": "browserify index.js > browser.js"
+    "test": "grunt && npm run browser-test",
+    "browser-test": "npm run browser && tape test/browser/*.js",
+    "browser": "browserify standalone.js > browser.js"
   },
   "testling": {
+    "harness": "tape",
     "files": "test/browser/*.js",
     "browsers": [
       "ie/6..latest",
