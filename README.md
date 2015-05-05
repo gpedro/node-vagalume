@@ -1,21 +1,25 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# node-vagalume [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-> Vagalume API Node Module
+No Vagalume temos a **performance** como um dos itens mais importantes no desenvolvimento do sistema. Devido a grande quantidade de acessos no site, temos como prioridade o carregamento rápido e escalabilidade da aplicação. Utilizar as funções encontradas na API não devem deixar o seu site mais lento ou gerar problemas de estabilidade em nosso sistema. Nesta documentação devemos abordar as melhores práticas de como fazer requisições de forma assíncrona.
 
+**IMPORTANTE**: O uso da API é totalmente gratuito, mas é muito importante que o [logo](http://api.vagalume.com.br/terms/) e link para a página correspondente no Vagalume estejam presentes. Leia os [termos de uso](http://api.vagalume.com.br/terms/), e verifique se o seu site ou aplicação estão de acordo.
 
-## Install
+## Instalação
 
 ```sh
 $ npm install --save node-vagalume
 ```
 
-
-## Usage
+## Como usar
+> **ATENÇÃO**: Todos os métodos retornam um Promise.
 
 ```js
-var nodeVagalume = require('node-vagalume');
+var Vagalume = require('node-vagalume');
+var api = new Vagalume();
 
-nodeVagalume('Rainbow');
+api.getNoticias().then(function (data) {
+  // faça o que quiser com o retorno  
+});
 ```
 
 ```sh
@@ -23,6 +27,22 @@ nodeVagalume('Rainbow');
 $ npm run browser
 ```
 
+## Documentação
+
+#### getArtista(nome)
+> Além das letras existem várias informações disponíveis sobre o artista. Dados como quantidade de acessos, posição no ranking, gênero musical, músicas mais acessadas do artista, discografia e muito mais. ([ver mais](http://api.vagalume.com.br/docs/artistas/))
+
+#### getByTrecho(trecho, [limite])
+> Um dos recursos mais interessantes para buscar letras de músicas é a possibilidade de consultar por trecho. Muitas vezes o usuário não lembra do título da música, por isso, este segmento da API pode retornar as músicas que possúem tal trecho buscado. ([ver mais](http://api.vagalume.com.br/docs/letras/trecho/))
+
+#### getDiscografia(nome)
+> O Vagalume possui também um banco de dados organizando as discografias (álbuns) de cada artista. Como todas as outras chamadas da API, o retorno é feito por JSON e pode e deve ser feito direto pelo navegador do usuário. ([ver mais](http://api.vagalume.com.br/docs/discografia/))
+
+#### getHotspots()
+> O Hot Spot é o nome da seção do Vagalume que é atualizada diariamente na home com novidades de clipes, músicas e conteúdo relevante para os usuários site. Milhões de usuários entram no Vagalume diariamente para saber o que há de novo no mundo da música. ([ver mais](http://api.vagalume.com.br/docs/hotspot/))
+
+#### getNoticias()
+> Você pode integrar as chamadas das notícias do Vagalume em seu site. Assim, você poderá oferecer um conteúdo bastante atualizados sobre o que acontece no mundo da música. No código abaixo, mostramos as últimas 20 notícias publicadas com informações para link e imagem. ([ver mais](http://api.vagalume.com.br/docs/news/))
 
 ## License
 
