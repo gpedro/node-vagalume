@@ -1,6 +1,6 @@
 {
   "name": "node-vagalume",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Vagalume API Node Module",
   "homepage": "http://github.com/gpedro/node-vagalume/",
   "author": {
