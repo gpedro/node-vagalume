@@ -1,0 +1,43 @@
+{
+  "name": "node-vagalume",
+  "version": "0.0.0",
+  "description": "Vagalume API Node Module",
+  "homepage": "http://github.com/gpedro/node-vagalume/",
+  "author": {
+    "name": "Gabriel Pedro",
+    "email": "gpedro831@gmail.com",
+    "url": "https://gpedro.net"
+  },
+  "repository": "gpedro/node-vagalume",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "node-vagalume",
+    "vagalume",
+    "musica",
+    "api",
+    "brasil",
+    "gpedro"
+  ],
+  "dependencies": {
+    "dashify": "^0.1.0",
+    "request-promise": "^0.4.2"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-cli": "^1.12.0",
+    "jshint-stylish": "^1.0.1",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.1.0"
+  },
+  "scripts": {
+    "test": "grunt",
+    "browser": "browserify index.js > browser.js"
+  }
+}
