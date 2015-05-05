@@ -22,8 +22,9 @@
     "gpedro"
   ],
   "dependencies": {
+    "bluebird": "^2.9.25",
     "dashify": "^0.1.0",
-    "request-promise": "^0.4.2"
+    "node-fetch": "^1.2.1"
   },
   "devDependencies": {
     "browserify": "^9.0.3",

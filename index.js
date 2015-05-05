@@ -1,11 +1,14 @@
 'use strict';
 
-var request = require('request-promise');
+var fetch = require('node-fetch');
 var dashify = require('dashify');
 var qs = require('querystring');
-
+var bluebird = require('bluebird');
 
 function Vagalume() {
+  // Promise Fallback
+  fetch.Promise = fetch.Promise || bluebird;
+
   // Configs
   this.baseUrl = 'http://www.vagalume.com.br';
   this.baseApi = 'http://api.vagalume.com.br';
@@ -43,17 +46,13 @@ function Vagalume() {
   };
 
   PRIVATE.prepareRequest = function (url, args) {
-    var opts = {
-      json: true,
-      uri: url,
-      resolveWithFullResponse: true
-    };
-
     if (args !== undefined && Object.keys(args).length > 0) {
-      opts.uri += qs.stringify(args);
+      url += qs.stringify(args);
     }
 
-    return request.get(opts);
+    return fetch(url).then(function (res) {
+      return res.json();
+    });
   };
 
   PRIVATE.apiRequest = function (method, args) {
