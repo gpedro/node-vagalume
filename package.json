@@ -34,6 +34,9 @@
     "tape": "^4.0.0",
     "time-grunt": "^1.1.0"
   },
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "grunt && npm run browser-test",
     "browser-test": "npm run browser && tape test/browser/*.js",
