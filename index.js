@@ -43,8 +43,8 @@ function Vagalume() {
     if (value !== undefined) {
 
       switch (type) {
-        case 'integer':
-          if (parseInt(value).isNaN()) {
+        case 'int':
+          if (isNaN(parseInt(value))) {
             throw new Error('VagalumeAPI :: O campo ' + name + ' deve ser do tipo ' + type + '.');
           }
         break;

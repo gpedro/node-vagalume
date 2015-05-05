@@ -31,13 +31,24 @@ describe('node-vagalume node module', function () {
 
   it('VagalumeAPI :: getByTrecho(q=told ya, limit=10)', function (done) {
 
-    api.getByTrecho('told ya').then(function (response) {
+    api.getByTrecho('told ya', 10).then(function (response) {
       assert(10, response.response.docs.length);
       done();
     }).catch(function (err) {
       throw err;
     });
 
+  });
+  it('VagalumeAPI :: getByTrecho(q=told ya, limit=invalid)', function () {
+    // jshint unused:false
+
+    var fn = function () {
+        return api.getByTrecho('told ya', 'hue').catch(function (err) {
+          throw err;
+        });
+    };
+
+    assert.throws(function () { fn(); }, /O campo limit deve ser do tipo int/);
   });
 
   it('VagalumeAPI :: getDiscografia(Rage Against the Machine)', function (done) {
