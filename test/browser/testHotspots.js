@@ -8,8 +8,7 @@ test('VagalumeAPI :: getHotspots()', function (t) {
     t.equal(10, response.hotspots.length);
     t.end();
   }).catch(function (err) {
-    t.end();
-    throw err;
+    t.end(err);
   });
 
 });

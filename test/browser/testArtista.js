@@ -8,7 +8,6 @@ test('VagalumeAPI :: getArtista(Rage Against the Machine)', function (t) {
     t.equal('3ade68b5gef77eda3', response.artist.id);
     t.end();
   }).catch(function (err) {
-    t.end();
-    throw err;
+    t.end(err);
   });
 });

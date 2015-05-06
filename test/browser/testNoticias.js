@@ -8,8 +8,7 @@ test('VagalumeAPI :: getNoticias()', function (t) {
     t.equal(20, response.news.length);
     t.end();
   }).catch(function (err) {
-    t.end();
-    throw err;
+    t.end(err);
   });
 
 });

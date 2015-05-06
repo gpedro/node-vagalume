@@ -8,8 +8,7 @@ test('VagalumeAPI :: getDiscografia(Rage Against the Machine)', function (t) {
     t.equal(5, response.discography.item.length);
     t.end();
   }).catch(function (err) {
-    t.end();
-    throw err;
+    t.end(err);
   });
 
 });

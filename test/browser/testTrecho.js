@@ -8,8 +8,7 @@ test('VagalumeAPI :: getByTrecho(q=told ya)', function (t) {
     t.equal(4, response.response.docs.length);
     t.end();
   }).catch(function (err) {
-    t.end();
-    throw err;
+    t.end(err);
   });
 
 });
@@ -19,8 +18,7 @@ test('VagalumeAPI :: getByTrecho(q=told ya, limit=10)', function (t) {
     t.equal(10, response.response.docs.length);
     t.end();
   }).catch(function (err) {
-    t.end();
-    throw err;
+    t.end(err);
   });
 
 });
