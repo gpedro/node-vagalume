@@ -8,14 +8,14 @@ No Vagalume temos a **performance** como um dos itens mais importantes no desenv
 ## Instalação
 
 ```sh
-$ npm install --save node-vagalume
+$ npm install --save vagalume
 ```
 
 ## Como usar
 > **ATENÇÃO**: Todos os métodos retornam um Promise.
 
 ```js
-var Vagalume = require('node-vagalume');
+var Vagalume = require('vagalume');
 var api = new Vagalume();
 
 api.getNoticias().then(function (data) {
