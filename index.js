@@ -1,8 +1,9 @@
 'use strict';
+/* jshint -W100 */
 
 var dashify = require('dashify');
 var qs = require('querystring');
-var Promise = require('bluebird');
+var BlueBird = require('bluebird');
 var http = require('http');
 
 function Vagalume() {
@@ -17,7 +18,7 @@ function Vagalume() {
 
   // Private Methods
   PRIVATE.fetch = function(url) {
-    return new Promise(function(resolve, reject) {
+    return new BlueBird(function(resolve, reject) {
       http.get(url, function(res) {
         var body = '';
         res.on('data', function(chunk) {
