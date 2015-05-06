@@ -1,4 +1,5 @@
-# node-vagalume [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# node-vagalume
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Code Climate][climate-image]][climate-url] [![Test Coverage][coverage-image]][coverage-url]
 
 No Vagalume temos a **performance** como um dos itens mais importantes no desenvolvimento do sistema. Devido a grande quantidade de acessos no site, temos como prioridade o carregamento rápido e escalabilidade da aplicação. Utilizar as funções encontradas na API não devem deixar o seu site mais lento ou gerar problemas de estabilidade em nosso sistema. Nesta documentação devemos abordar as melhores práticas de como fazer requisições de forma assíncrona.
 
@@ -55,3 +56,7 @@ MIT © [Gabriel Pedro](https://gpedro.net)
 [travis-url]: https://travis-ci.org/gpedro/node-vagalume
 [daviddm-image]: https://david-dm.org/gpedro/node-vagalume.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/gpedro/node-vagalume
+[coverage-image]: https://codeclimate.com/github/gpedro/node-vagalume/badges/coverage.svg
+[coverage-url]: https://codeclimate.com/github/gpedro/node-vagalume/coverage
+[climate-image]: https://codeclimate.com/github/gpedro/node-vagalume/badges/gpa.svg
+[climate-url]: https://codeclimate.com/github/gpedro/node-vagalume
