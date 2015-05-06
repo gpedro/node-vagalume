@@ -50,8 +50,8 @@ $ npm run browser
 MIT © [Gabriel Pedro](https://gpedro.net)
 
 
-[npm-image]: https://badge.fury.io/js/node-vagalume.svg
-[npm-url]: https://npmjs.org/package/node-vagalume
+[npm-image]: https://badge.fury.io/js/vagalume.svg
+[npm-url]: https://npmjs.org/package/vagalume
 [travis-image]: https://travis-ci.org/gpedro/node-vagalume.svg?branch=master
 [travis-url]: https://travis-ci.org/gpedro/node-vagalume
 [daviddm-image]: https://david-dm.org/gpedro/node-vagalume.svg?theme=shields.io
