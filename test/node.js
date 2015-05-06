@@ -18,6 +18,18 @@ describe('node-vagalume node module', function () {
 
   });
 
+  it('VagalumeAPI :: getArtista()', function () {
+
+    var fn = function () {
+      api.getArtista().catch(function (err) {
+      throw err;
+      });
+    };
+
+    assert.throws(function () { fn(); }, /O campo name é obrigatório/);
+
+  });
+
   it('VagalumeAPI :: getByTrecho(q=told ya)', function (done) {
 
     api.getByTrecho('told ya').then(function (response) {
@@ -26,6 +38,18 @@ describe('node-vagalume node module', function () {
     }).catch(function (err) {
       throw err;
     });
+
+  });
+
+  it('VagalumeAPI :: getByTrecho()', function () {
+
+    var fn = function () {
+      api.getByTrecho().catch(function (err) {
+        throw err;
+      });
+    };
+
+    assert.throws(function () { fn(); }, /O campo query é obrigatório/);
 
   });
 
@@ -39,8 +63,8 @@ describe('node-vagalume node module', function () {
     });
 
   });
+
   it('VagalumeAPI :: getByTrecho(q=told ya, limit=invalid)', function () {
-    // jshint unused:false
 
     var fn = function () {
         return api.getByTrecho('told ya', 'hue').catch(function (err) {
@@ -59,6 +83,18 @@ describe('node-vagalume node module', function () {
     }).catch(function (err) {
       throw err;
     });
+
+  });
+
+  it('VagalumeAPI :: getDiscografia()', function () {
+
+    var fn = function () {
+      api.getDiscografia().catch(function (err) {
+        throw err;
+      });
+    };
+
+    assert.throws(function () { fn(); }, /O campo name é obrigatório/);
 
   });
 
