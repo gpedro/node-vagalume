@@ -79,8 +79,6 @@ function Vagalume() {
     return this.prepareRequest(this.baseUrl + method, args);
   };
 
-
-
   // Public Methods
   PUBLIC.getArtista = function (name) {
     PRIVATE.requiredParam('name', name, 'string');
@@ -113,10 +111,7 @@ function Vagalume() {
     return PRIVATE.wwwRequest('/news/index.js');
   };
 
-
   return this;
 }
-
-
 
 module.exports = Vagalume;
