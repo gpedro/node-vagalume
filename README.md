@@ -45,6 +45,9 @@ $ npm run browser
 #### getNoticias()
 > Você pode integrar as chamadas das notícias do Vagalume em seu site. Assim, você poderá oferecer um conteúdo bastante atualizados sobre o que acontece no mundo da música. No código abaixo, mostramos as últimas 20 notícias publicadas com informações para link e imagem. ([ver mais](http://api.vagalume.com.br/docs/news/))
 
+#### getImagens()
+> O Vagalume possui também um banco de imagens organizadas por galerias. Disponibilizadas pelo próprio artista no caso como (Divulgação) ou as que os prórpios usuários enviam (Enviadas pelos usuários). ([ver mais](http://api.vagalume.com.br/docs/image/))
+
 ## License
 
 MIT © [Gabriel Pedro](https://gpedro.net)

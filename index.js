@@ -111,6 +111,19 @@ function Vagalume() {
     return PRIVATE.wwwRequest('/news/index.js');
   };
 
+  PUBLIC.getImagens = function (bandId, limit) {
+    PRIVATE.requiredParam('bandID', bandId, 'string');
+    PRIVATE.optionalParam('limit', limit, 'int');
+
+    var opts = { bandID: bandId };
+
+    if (limit > 0) {
+      opts.limit = limit;
+    }
+
+    return PRIVATE.apiRequest('/image.php?', opts);
+  };
+
   return this;
 }
 

@@ -120,4 +120,39 @@ describe('node-vagalume node module', function () {
 
   });
 
+
+  it('VagalumeAPI :: getImagens()', function () {
+
+    var fn = function () {
+      api.getImagens().catch(function (err) {
+        throw err;
+      });
+    };
+
+    assert.throws(function () { fn(); }, /O campo bandID é obrigatório/);
+
+  });
+
+  it('VagalumeAPI :: getImagens(q=3ade68b3gdb86eda3, limit=10)', function (done) {
+
+    api.getImagens('3ade68b3gdb86eda3', 10).then(function (response) {
+      assert(10, response.images.length);
+      done();
+    }).catch(function (err) {
+      throw err;
+    });
+
+  });
+
+  it('VagalumeAPI :: getImagens(q=3ade68b3gdb86eda3, limit=invalid)', function () {
+
+    var fn = function () {
+        return api.getImagens('3ade68b3gdb86eda3', 'hue').catch(function (err) {
+          throw err;
+        });
+    };
+
+    assert.throws(function () { fn(); }, /O campo limit deve ser do tipo int/);
+  });
+
 });
