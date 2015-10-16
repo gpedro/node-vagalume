@@ -3,3 +3,4 @@ npm-debug.log
 hue.js
 browser.js
 coverage/
+.idea/
