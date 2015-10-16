@@ -1,20 +1,18 @@
 'use strict';
 /* jshint -W100 */
 
-var dashify = require('dashify');
-var qs = require('querystring');
-var BlueBird = require('bluebird');
-var http = require('http');
+//Module dependencies
+var dashify = require('dashify'),
+    qs = require('querystring'),
+    BlueBird = require('bluebird'),
+    http = require('http'),
+    constants = require('./util/constants');
 
 function Vagalume() {
 
   // I'm Java Developer
   var PRIVATE = {};
   var PUBLIC = this;
-
-  // Configs
-  PRIVATE.baseUrl = 'http://www.vagalume.com.br';
-  PRIVATE.baseApi = 'http://api.vagalume.com.br';
 
   // Private Methods
   PRIVATE.fetch = function(url) {
@@ -72,11 +70,11 @@ function Vagalume() {
   };
 
   PRIVATE.apiRequest = function (method, args) {
-    return this.prepareRequest(this.baseApi + method, args);
+    return this.prepareRequest(constants.baseApi + method, args);
   };
 
   PRIVATE.wwwRequest = function(method, args) {
-    return this.prepareRequest(this.baseUrl + method, args);
+    return this.prepareRequest(constants.baseUrl + method, args);
   };
 
   // Public Methods
