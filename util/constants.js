@@ -9,7 +9,15 @@
 var constants = {
 
   baseUrl: 'http://www.vagalume.com.br',
-  baseApi: 'http://api.vagalume.com.br'
+  baseApi: 'http://api.vagalume.com.br',
+
+  rank: {
+    type: {
+      artist: 'art',
+      album: 'alb',
+      music: 'mus'
+    }
+  }
 
 };
 

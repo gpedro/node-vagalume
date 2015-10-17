@@ -109,6 +109,30 @@ function Vagalume() {
     return PRIVATE.wwwRequest('/news/index.js');
   };
 
+  PUBLIC.getRank = function(type, period, periodVal, scope, limit) {
+
+    var opts = {};
+
+    PRIVATE.requiredParam('type', type, 'string');
+    PRIVATE.requiredParam('period', period, 'string');
+    PRIVATE.optionalParam('periodVal', periodVal, 'int');
+    scope = scope || 'all';
+    PRIVATE.optionalParam('limit', limit, 'int');
+
+    opts.type = type;
+
+    if(type !== constants.rank.type.album) {
+      opts.period = period;
+      if(periodVal) opts.periodVal = periodVal;
+    }
+
+    opts.scope = scope;
+    opts.limit = limit;
+
+    return PRIVATE.apiRequest('/rank.php?', opts);
+
+  };
+
   PUBLIC.getImagens = function (bandId, limit) {
     PRIVATE.requiredParam('bandID', bandId, 'string');
     PRIVATE.optionalParam('limit', limit, 'int');

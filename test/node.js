@@ -1,16 +1,52 @@
 'use strict';
-var assert = require('assert');
-var Vagalume = require('../');
-var api = new Vagalume();
+var assert = require('assert'),
+    Vagalume = require('../'),
+    api = new Vagalume();
 
 describe('node-vagalume node module', function () {
 
-  this.timeout(6000);
+  this.timeout(7000);
 
   it('VagalumeAPI :: getArtista(Rage Against the Machine)', function (done) {
 
     api.getArtista('Rage Against the Machine').then(function (response) {
       assert('3ade68b5gef77eda3', response.artist.id);
+      done();
+    }).catch(function (err) {
+      throw err;
+    });
+
+  });
+
+  it('VagalumeAPI :: getRank(art, day, 20151016, all, 5)', function (done) {
+
+    api.getRank('art', 'day', 20151016, 'all', 5).then(function (response) {
+
+      assert(5, response.art.day.all.length);
+      done();
+    }).catch(function (err) {
+      throw err;
+    });
+
+  });
+
+  it('VagalumeAPI :: getRank(art, week, 201510, all, 5)', function (done) {
+
+    api.getRank('art', 'week', 201510, 'all', 5).then(function (response) {
+
+      assert(5, response.art.week.all.length);
+      done();
+    }).catch(function (err) {
+      throw err;
+    });
+
+  });
+
+  it('VagalumeAPI :: getRank(art, month, 201510, all, 5)', function (done) {
+
+    api.getRank('art', 'month', 201510, 'all', 5).then(function (response) {
+
+      assert(5, response.art.month.all.length);
       done();
     }).catch(function (err) {
       throw err;
