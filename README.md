@@ -3,7 +3,9 @@
 
 No Vagalume temos a **performance** como um dos itens mais importantes no desenvolvimento do sistema. Devido a grande quantidade de acessos no site, temos como prioridade o carregamento rápido e escalabilidade da aplicação. Utilizar as funções encontradas na API não devem deixar o seu site mais lento ou gerar problemas de estabilidade em nosso sistema. Nesta documentação devemos abordar as melhores práticas de como fazer requisições de forma assíncrona.
 
-**IMPORTANTE**: O uso da API é totalmente gratuito, mas é muito importante que o [logo](http://api.vagalume.com.br/terms/) e link para a página correspondente no Vagalume estejam presentes. Leia os [termos de uso](http://api.vagalume.com.br/terms/), e verifique se o seu site ou aplicação estão de acordo.
+**IMPORTANTE**: ~~O uso da API é totalmente gratuito, mas é muito importante que o [logo](http://api.vagalume.com.br/terms/) e link para a página correspondente no Vagalume estejam presentes. Leia os [termos de uso](http://api.vagalume.com.br/terms/), e verifique se o seu site ou aplicação estão de acordo.~~
+
+**IMPORTANTE**: Para usar Vagalume API, é necessário que seu aplicativo tenha [credenciais de autorização](https://auth.vagalume.com.br/). Cadastre-se no Vagalume e crie sua chave de API. Esta credencial será requerida a partir do dia **23/11/2015**.
 
 ## Instalação
 
@@ -47,6 +49,9 @@ $ npm run browser
 
 #### getImagens()
 > O Vagalume possui também um banco de imagens organizadas por galerias. Disponibilizadas pelo próprio artista no caso como (Divulgação) ou as que os prórpios usuários enviam (Enviadas pelos usuários). ([ver mais](http://api.vagalume.com.br/docs/image/))
+
+#### getRanks()
+> As informações de ranking no Vagalume são constantemente atualizadas e representam a tendência musical conforme milhões de acessos diários a páginas de letras, artistas, álbuns dentre outros. As informações são bem seccionadas, permitindo uso variado e fornecendo inúmeras possibilidades de aplicação em seu projeto.. ([ver mais](http://api.vagalume.com.br/docs/rank/))
 
 ## License
 
