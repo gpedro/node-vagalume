@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "bluebird": "^2.9.25",
-    "dashify": "^0.1.0"
+    "dashify": "^0.2.0"
   },
   "devDependencies": {
     "browserify": "^9.0.3",
