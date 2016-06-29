@@ -36,7 +36,7 @@ $ npm run browser
 > Além das letras existem várias informações disponíveis sobre o artista. Dados como quantidade de acessos, posição no ranking, gênero musical, músicas mais acessadas do artista, discografia e muito mais. ([ver mais](http://api.vagalume.com.br/docs/artistas/))
 
 #### getByTrecho(trecho, [limite])
-> Um dos recursos mais interessantes para buscar letras de músicas é a possibilidade de consultar por trecho. Muitas vezes o usuário não lembra do título da música, por isso, este segmento da API pode retornar as músicas que possúem tal trecho buscado. ([ver mais](http://api.vagalume.com.br/docs/letras/trecho/))
+> Um dos recursos mais interessantes para buscar letras de músicas é a possibilidade de consultar por trecho. Muitas vezes o usuário não lembra do título da música, por isso, este segmento da API pode retornar as músicas que possúem tal trecho buscado. ([ver mais](http://api.vagalume.com.br/docs/search/#mus))
 
 #### getDiscografia(nome)
 > O Vagalume possui também um banco de dados organizando as discografias (álbuns) de cada artista. Como todas as outras chamadas da API, o retorno é feito por JSON e pode e deve ser feito direto pelo navegador do usuário. ([ver mais](http://api.vagalume.com.br/docs/discografia/))
