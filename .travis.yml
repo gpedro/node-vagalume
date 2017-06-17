@@ -1,15 +1,11 @@
 sudo: false
 language: node_js
 node_js:
-  - 'iojs'
-  - '0.12'
-  - '0.10'
+  - 'node'
 env:
   CODECLIMATE_REPO_TOKEN: '9c3a8f62dcb2f61305a1c3d66df776e20be87183fec99313920d6468a199394d'
 before_script:
-  - npm install -g istanbul
-  - npm install -g mocha
-  - npm install -g codeclimate-test-reporter
+  - npm install -g istanbul mocha codeclimate-test-reporter
 after_success:
   - NODE_ENV=test LOG_LV=info istanbul cover _mocha -- -R spec test/node.js --timeout 20000
   - codeclimate < ./coverage/lcov.info
