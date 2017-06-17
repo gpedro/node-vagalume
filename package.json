@@ -19,18 +19,19 @@
     "gpedro"
   ],
   "dependencies": {
-    "bluebird": "^3.1.1",
-    "dashify": "^0.2.0"
+    "dashify": "^0.2.0",
+    "node-fetch": "^1.7.1"
   },
   "devDependencies": {
-    "browserify": "^9.0.3",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-mocha-cli": "^1.12.0",
-    "jshint-stylish": "^1.0.1",
+    "browserify": "^14.4.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-cli": "^3.0.0",
+    "jshint-stylish": "^2.2.1",
     "load-grunt-tasks": "^3.1.0",
+    "mocha": "^3.4.2",
     "tape": "^4.0.0",
     "time-grunt": "^1.1.0"
   },

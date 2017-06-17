@@ -4,8 +4,7 @@
 //Module dependencies
 var dashify = require('dashify'),
     qs = require('querystring'),
-    BlueBird = require('bluebird'),
-    http = require('http'),
+    fetch = require('node-fetch'),
     constants = require('./util/constants');
 
 function Vagalume() {
@@ -16,21 +15,8 @@ function Vagalume() {
 
   // Private Methods
   PRIVATE.fetch = function(url) {
-    return new BlueBird(function(resolve, reject) {
-      http.get(url, function(res) {
-        var body = '';
-        res.on('data', function(chunk) {
-          body += chunk;
-        });
-
-        res.setEncoding('utf8');
-
-        res.on('end', function () {
-          return resolve(JSON.parse(body));
-        });
-      }).on('error', function(err) {
-        return reject(err);
-      });
+    return fetch(url).then(function (res) {
+      return res.json();
     });
   };
 
